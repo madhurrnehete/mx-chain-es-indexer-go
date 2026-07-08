@@ -26,6 +26,6 @@
         username = ""
         password = ""
         # Only set true for an intentionally unsecured local cluster.
-        allow-insecure-no-auth-dev = true
+        allow-insecure-no-auth-dev = false
         bulk-request-max-size-in-bytes = 4194304 # 4MB
         num-writes-in-parallel = 1
