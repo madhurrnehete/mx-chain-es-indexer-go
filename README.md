@@ -160,3 +160,4 @@ After the configuration file is set up, the `elasticindexer` instance can be lau
 
 Contributions to the `mx-chain-es-indexer-go` module are welcomed. Whether you're interested in improving its features, 
 extending its capabilities, or addressing issues, your contributions can help the community make the module even more robust.
+
