@@ -5,11 +5,13 @@ test:
 	@echo "  >  Running unit tests"
 	go test -cover -race -coverprofile=coverage.txt -covermode=atomic -v ${TESTS_TO_RUN}
 
+ELASTIC_PASSWORD = elastic
+
 integration-tests:
 	@echo " > Running integration tests"
-	cd scripts && /bin/bash script.sh start ${ES_VERSION}
+	ELASTIC_PASSWORD=${ELASTIC_PASSWORD} cd scripts && /bin/bash script.sh start ${ES_VERSION}
 	go test -v ./integrationtests -tags integrationtests
-	cd scripts && /bin/bash script.sh delete
+	ELASTIC_PASSWORD=${ELASTIC_PASSWORD} cd scripts && /bin/bash script.sh delete
 	cd scripts && /bin/bash script.sh stop
 
 long-tests:
