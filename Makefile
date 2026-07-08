@@ -9,9 +9,9 @@ ELASTIC_PASSWORD = elastic
 
 integration-tests:
 	@echo " > Running integration tests"
-	ELASTIC_PASSWORD=${ELASTIC_PASSWORD} cd scripts && /bin/bash script.sh start ${ES_VERSION}
+	export ELASTIC_PASSWORD=${ELASTIC_PASSWORD} && cd scripts && /bin/bash script.sh start ${ES_VERSION}
 	go test -v ./integrationtests -tags integrationtests
-	ELASTIC_PASSWORD=${ELASTIC_PASSWORD} cd scripts && /bin/bash script.sh delete
+	export ELASTIC_PASSWORD=${ELASTIC_PASSWORD} && cd scripts && /bin/bash script.sh delete
 	cd scripts && /bin/bash script.sh stop
 
 long-tests:
